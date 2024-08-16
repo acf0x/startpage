@@ -14,7 +14,7 @@ input.addEventListener("keydown", function (e) {
     render(`<span class="red">$&nbsp;</span>${input.value}`);
     try {
       const commandDetails = commands.find((c) =>
-        c.name.map((n) => n.toLowerCase()).includes(command)
+        c.name.map((n) => n.toLowerCase()).includes(command),
       );
       if (commandDetails) {
         if (command === "help") commandDetails.execute(commands);

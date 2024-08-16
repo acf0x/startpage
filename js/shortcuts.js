@@ -6,7 +6,8 @@ export default [
       github: "https://github.com/acf0x",
       gitlab: "https://gitlab.com/",
       aws: "https://aws.amazon.com",
-      "conventional commits": "https://www.conventionalcommits.org/en/v1.0.0/#summary",
+      "conventional commits":
+        "https://www.conventionalcommits.org/en/v1.0.0/#summary",
     },
   },
   {
@@ -36,7 +37,7 @@ export default [
       youtube: "https://www.youtube.com/feed/subscriptions?flow=2",
       twitch: "https://www.twitch.tv/directory/following/live",
       tempmail: "https://tempmail.email/",
-      "/g/": "https://boards.4chan.org/g/",      // IPTorrents: "https://iptorrents.com/t",
+      "/g/": "https://boards.4chan.org/g/", // IPTorrents: "https://iptorrents.com/t",
     },
   },
 ];

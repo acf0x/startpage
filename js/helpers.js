@@ -26,7 +26,7 @@ const getWeather = () => {
     error(
       "red",
       "Unauthorized",
-      "API key and location are not set, run `weather set` for instructions"
+      "API key and location are not set, run `weather set` for instructions",
     );
     return;
   }
@@ -35,20 +35,20 @@ const getWeather = () => {
     cached = JSON.parse(cached);
     if (dateDiffInMinutes(cached.fetchedAt, Date.now()) < 15) {
       render(
-        `It's ${cached.temp} °F out in ${cached.name}, ${cached.state}. Expect ${cached.desc}.`
+        `It's ${cached.temp} °F out in ${cached.name}, ${cached.state}. Expect ${cached.desc}.`,
       );
       return;
     }
   }
   fetch(
-    `https://api.openweathermap.org/geo/1.0/direct?q=${loc}&appid=${WEATHER_API_KEY}`
+    `https://api.openweathermap.org/geo/1.0/direct?q=${loc}&appid=${WEATHER_API_KEY}`,
   )
     .then((geoRes) => geoRes.json())
     .then((geoData) => {
       geoData = geoData[0];
       let cacheData = { ...geoData };
       fetch(
-        `https://api.openweathermap.org/data/2.5/weather?units=imperial&lat=${geoData.lat}&lon=${geoData.lon}&appid=${WEATHER_API_KEY}`
+        `https://api.openweathermap.org/data/2.5/weather?units=imperial&lat=${geoData.lat}&lon=${geoData.lon}&appid=${WEATHER_API_KEY}`,
       )
         .then((weatherRes) => weatherRes.json())
         .then((weatherData) => {
@@ -60,7 +60,7 @@ const getWeather = () => {
             fetchedAt: Date.now().toString(),
           };
           render(
-            `It's ${cacheData.temp} °F out in ${cacheData.name}, ${cacheData.state}. Expect ${cacheData.desc}.`
+            `It's ${cacheData.temp} °F out in ${cacheData.name}, ${cacheData.state}. Expect ${cacheData.desc}.`,
           );
           localStorage.setItem("cachedWeather", JSON.stringify(cacheData));
         })
