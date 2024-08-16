@@ -2,6 +2,8 @@
 
 An iTerm-inspired startpage page.
 
+![Screenshot](/Screenshot.png)
+
 ## Usage
 
 - `search` or `s` + query to search in DuckDuckGo.
